@@ -1,0 +1,1798 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panelistas Latinos | Gana dinero con encuestas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        /* ============================================
+                   RESET Y BASE
+                   ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+                   FONDO CON GRADIENTE ANIMADO (COLORES VIBRANTES)
+                   ============================================ */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #0d1b3e, #1a0a2e);
+            background-size: 400% 400%;
+            animation: gradientMove 18s ease-in-out infinite;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ============================================
+                   WHATSAPP FLOTANTE
+                   ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.35);
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        /* ============================================
+                   HEADER
+                   ============================================ */
+        .header {
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 20, 0.6);
+            backdrop-filter: blur(20px) saturate(1.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, #00d2ff, #7b2ffc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-links li {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li:hover {
+            color: #ffffff;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #00d2ff, #7b2ffc);
+            color: #fff !important;
+            padding: 10px 28px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(123, 47, 252, 0.25);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(123, 47, 252, 0.35);
+        }
+
+        /* ============================================
+                   HERO
+                   ============================================ */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 40px 0 60px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 .highlight {
+            background: linear-gradient(135deg, #00d2ff, #7b2ffc, #f857a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: shimmer 5s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            max-width: 480px;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .hero-text p strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.08);
+            border: 1px solid rgba(0, 210, 255, 0.12);
+            padding: 6px 20px;
+            border-radius: 100px;
+            font-size: 12px;
+            color: #00d2ff;
+            font-weight: 500;
+            margin-bottom: 24px;
+            letter-spacing: 0.4px;
+        }
+
+        .hero-badge span {
+            background: linear-gradient(135deg, #00d2ff, #7b2ffc);
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            margin-right: 8px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #00d2ff, #7b2ffc);
+            color: #fff;
+            padding: 16px 44px;
+            border-radius: 60px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(123, 47, 252, 0.3);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 40px rgba(123, 47, 252, 0.4);
+        }
+
+        /* ===== IMAGEN / TARJETA GLASS ===== */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px) saturate(1.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 32px;
+            padding: 40px 36px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-card .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #00d2ff, #7b2ffc);
+            border-radius: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .hero-card .card-image .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-card .card-image .placeholder svg {
+            width: 48px;
+            height: 48px;
+            fill: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .hero-card .card-header .icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .hero-card .card-header .icon svg {
+            width: 100%;
+            height: 100%;
+            fill: #00d2ff;
+        }
+
+        .hero-card .card-header h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .hero-card .card-header p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-card .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .hero-card .feature-list .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        .hero-card .feature-list .item .check {
+            color: #00d2ff;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 1px;
+        }
+
+        .hero-card .feature-list .item strong {
+            color: #ffffff;
+        }
+
+        /* ============================================
+                   SECCIÓN: MARCAS
+                   ============================================ */
+        .brands-section {
+            padding: 30px 0 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .brands-section .label {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 20px;
+        }
+
+        .brands-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .brands-grid .brand {
+            font-size: 15px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+        }
+
+        .brands-grid .brand:hover {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ============================================
+                   ANIMACIONES SCROLL
+                   ============================================ */
+        .fade-section {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+                   SECCIONES
+                   ============================================ */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: clamp(34px, 4.5vw, 52px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-title .gradient-text {
+            background: linear-gradient(135deg, #00d2ff, #7b2ffc, #f857a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: shimmer 5s ease-in-out infinite;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 19px;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin: 0 auto 60px;
+            font-weight: 400;
+        }
+
+        /* ===== PASOS ===== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 28px;
+            padding: 44px 32px;
+            text-align: center;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 210, 255, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .step-card .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #00d2ff, #7b2ffc);
+            color: #fff;
+            font-size: 20px;
+            font-weight: 800;
+            border-radius: 50%;
+            margin-bottom: 18px;
+        }
+
+        .step-card .icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 14px;
+            display: block;
+        }
+
+        .step-card .icon svg {
+            width: 100%;
+            height: 100%;
+            fill: rgba(255, 255, 255, 0.8);
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-card p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.7;
+        }
+
+        /* ===== SEGURIDAD ===== */
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .security-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 28px;
+            padding: 40px 28px;
+            text-align: center;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .security-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 210, 255, 0.1);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .security-card .icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            display: block;
+        }
+
+        .security-card .icon svg {
+            width: 100%;
+            height: 100%;
+            fill: rgba(255, 255, 255, 0.6);
+        }
+
+        .security-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .security-card p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.7;
+        }
+
+        .security-card .highlight {
+            color: #f857a6;
+            font-weight: 500;
+        }
+        /* ============================================
+                   FAQ
+                   ============================================ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            padding: 24px 32px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 17px;
+            color: #ffffff;
+        }
+
+        .faq-question .arrow {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.3);
+            transition: transform 0.4s ease;
+            display: inline-block;
+        }
+
+        .faq-item.active .faq-question .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.4s ease;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-top: 16px;
+        }
+
+        .faq-answer strong {
+            color: #ffffff;
+        }
+
+        /* ============================================
+                   CTA FINAL
+                   ============================================ */
+        .section-cta {
+            padding: 80px 20px 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 210, 255, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .section-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-cta .social-proof {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 8px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .section-cta .social-proof .count {
+            color: #00d2ff;
+            font-weight: 700;
+        }
+
+        .section-cta h2 {
+            font-size: clamp(34px, 4.5vw, 52px);
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-cta p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 19px;
+            max-width: 550px;
+            margin: 0 auto 36px;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #25D366, #1da851);
+            color: #fff;
+            padding: 20px 56px;
+            border-radius: 60px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.25);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.35);
+        }
+
+        .cta-security-text {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            margin-top: 20px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-security-text .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.2;
+            }
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header .container {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                margin-left: auto;
+                padding: 8px 20px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 30px 0 50px;
+            }
+
+            .hero-text h1 {
+                font-size: 34px;
+            }
+
+            .hero-text p {
+                font-size: 17px;
+            }
+
+            .hero-card {
+                padding: 28px 24px;
+            }
+
+            .hero-card .card-image {
+                height: 150px;
+            }
+
+            .steps-grid,
+            .security-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .section-subtitle {
+                font-size: 17px;
+            }
+
+            .hero-cta {
+                padding: 14px 32px;
+                font-size: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn-whatsapp {
+                padding: 16px 32px;
+                font-size: 17px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .section-cta {
+                padding: 50px 16px 70px;
+            }
+
+            .faq-item {
+                padding: 18px 20px;
+            }
+
+            .faq-question {
+                font-size: 15px;
+            }
+
+            .brands-grid {
+                gap: 24px;
+            }
+
+            .brands-grid .brand {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .hero-card .card-header h3 {
+                font-size: 18px;
+            }
+
+            .hero-card .feature-list .item {
+                font-size: 14px;
+            }
+
+            .hero-card .card-image {
+                height: 120px;
+            }
+        }
+/* ---------- PRUEBAS DE PAGO — LIMPIO & SEGURO ---------- */
+/* Grid compacto 2x2, sin overflow horizontal */
+.proof-grid {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto 30px;
+  padding: 0 12px;
+  align-items: start;
+  overflow: visible;
+}
+
+/* Tarjeta */
+.proof-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+/* Evitar zoom que recorta la imagen */
+.proof-card:hover .proof-image img { transform: none !important; }
+
+/* Wrapper blanco que da margen a la captura (protege la cifra) */
+.proof-image-wrapper {
+  padding: 14px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Contenedor de imagen: no forzamos aspect-ratio que recorta texto en algunas capturas */
+.proof-image {
+  width: 100%;
+  aspect-ratio: auto;
+  border-radius: 8px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+/* Mostrar captura completa (no recortar) y limitar altura razonable */
+.proof-image img {
+  width: 100%;
+  height: auto;
+  max-height: 320px; /* ajusta si quieres más alto */
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 6px;
+  transition: transform .35s ease;
+}
+
+/* Contenido debajo */
+.proof-content {
+  padding: 12px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: #e9eef8;
+}
+
+/* Evitar scroll lateral en todo el documento (seguridad) */
+html, body { overflow-x: hidden; }
+
+/* Reducir tamaño de iconos grandes en mobile */
+.category-block .category-icon { width: 56px; height: 56px; margin-bottom: 8px; }
+.category-block .category-icon svg { width: 56px; height: 56px; }
+
+/* Mobile tweaks: mantener 2 columnas y ajustar alturas */
+@media (max-width: 480px) {
+  .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 10px; }
+  .proof-image img { max-height: 260px; }
+  .category-block .category-icon, .category-block .category-icon svg { width: 44px; height: 44px; }
+}
+
+/* Header: evitar que el CTA quede solapado/bugueado */
+.header { z-index: 1000; position: sticky; top: 0; }
+
+/* Anular estilos inline conflictivos en imágenes si existen */
+.proof-image img[style] {
+  height: auto !important;
+  max-height: 320px !important;
+  width: 100% !important;
+  object-fit: contain !important;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 12px;
+}
+
+/* Estilo del panel desplegable del menú en móvil */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  /* ocultamos el menú horizontal y lo transformamos en panel */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;              /* ajusta si tu header cambia de alto */
+    right: 20px;
+    background: rgba(8, 12, 28, 0.96);
+    border-radius: 12px;
+    padding: 12px 16px;
+    gap: 12px;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+    z-index: 999;
+    min-width: 180px;
+  }
+
+  /* clase que activa el panel */
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* enlaces del menú en panel */
+  .nav-links li {
+    padding: 8px 6px;
+    color: rgba(255,255,255,0.9);
+    font-size: 15px;
+  }
+
+  /* Forzar CTA y botón WhatsApp full width y fáciles de tocar */
+  .hero-cta, .btn-whatsapp {
+    width: 100% !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+  }
+  /* Category blocks - diseño elegante y profesional */
+:root {
+  --cat-bg: rgba(255,255,255,0.02);
+  --cat-accent1: linear-gradient(135deg, #00d2ff 0%, #7b2ffc 100%);
+  --cat-icon-color: #ffffff;
+  --cat-text: #e9eef8;
+  --cat-muted: rgba(233,238,248,0.6);
+}
+
+.proof-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  align-items: start;
+  width: 100%;
+}
+
+/* cada bloque: card horizontal */
+.category-block {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--cat-bg);
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* hover sutil */
+.category-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* icon container: círculo con gradiente y borde suavizado */
+.category-icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cat-accent1);
+  box-shadow: 0 6px 18px rgba(123,47,252,0.12);
+  color: var(--cat-icon-color);
+  flex-shrink: 0;
+}
+
+/* svg dentro se pinta con currentColor */
+.category-icon svg { width: 28px; height: 28px; stroke: rgba(255,255,255,0.95); fill: none; }
+
+/* texto: título + subtítulo */
+.category-info h4 {
+  font-size: 16px;
+  margin: 0 0 4px;
+  color: var(--cat-text);
+  font-weight: 700;
+}
+
+.category-info p {
+  margin: 0;
+  color: var(--cat-muted);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* responsive: pilas verticales en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .proof-categories { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .category-block { padding: 10px 12px; border-radius: 10px; }
+  .category-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 10px; }
+  .category-icon svg { width: 22px; height: 22px; }
+  .category-info h4 { font-size: 15px; }
+  .category-info p { font-size: 13px; }
+}
+/* === Category blocks: Glass + micro hover (recomendado) === */
+.opt-glass {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+/* subtle lift on hover (micro interaction) */
+.opt-glass:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.32);
+  background: rgba(255,255,255,0.025);
+}
+
+/* icon tile */
+.opt-glass .category-icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  box-shadow: inset 0 -6px 12px rgba(0,0,0,0.08);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* svg styling: stroke uses currentColor so it adapts */
+.opt-glass .category-icon svg { width: 28px; height: 28px; stroke: rgba(233,238,248,0.95); fill: none; }
+
+/* title + subtitle */
+.opt-glass .category-info h4 {
+  font-size: 16px;
+  margin: 0 0 4px;
+  color: #e9eef8;
+  font-weight: 700;
+}
+.opt-glass .category-info p {
+  margin: 0;
+  color: rgba(233,238,248,0.62);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* layout grid for proof-categories (if not already) */
+.proof-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+/* adjust for small screens */
+@media (max-width: 480px) {
+  .proof-categories { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .opt-glass { padding: 10px 12px; border-radius: 10px; }
+  .opt-glass .category-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 10px; }
+  .opt-glass .category-icon svg { width: 22px; height: 22px; }
+  .opt-glass .category-info h4 { font-size: 15px; }
+  .opt-glass .category-info p { font-size: 13px; }
+}
+ /* === Category blocks: Glass + micro hover (recomendado) === */
+.proof-categories { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; align-items: start; width: 100%; }
+
+/* selector más específico para evitar overrides */
+.proof-footer .proof-categories .category-block.opt-glass,
+.proof-categories .category-block.opt-glass {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.proof-footer .proof-categories .category-block.opt-glass:hover,
+.proof-categories .category-block.opt-glass:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.32);
+  background: rgba(255,255,255,0.025);
+}
+
+.proof-footer .proof-categories .opt-glass .category-icon,
+.proof-categories .opt-glass .category-icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  box-shadow: inset 0 -6px 12px rgba(0,0,0,0.08);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.proof-footer .proof-categories .opt-glass .category-icon svg,
+.proof-categories .opt-glass .category-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: rgba(233,238,248,0.95);
+  fill: none;
+}
+
+.proof-footer .proof-categories .opt-glass .category-info h4,
+.proof-categories .opt-glass .category-info h4 {
+  font-size: 16px;
+  margin: 0 0 4px;
+  color: #e9eef8;
+  font-weight: 700;
+}
+
+.proof-footer .proof-categories .opt-glass .category-info p,
+.proof-categories .opt-glass .category-info p {
+  margin: 0;
+  color: rgba(233,238,248,0.62);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+@media (max-width: 480px) {
+  .proof-categories { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .opt-glass { padding: 10px 12px; border-radius: 10px; }
+  .opt-glass .category-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 10px; }
+  .opt-glass .category-icon svg { width: 22px; height: 22px; }
+  .opt-glass .category-info h4 { font-size: 15px; }
+  .opt-glass .category-info p { font-size: 13px; }
+}
+
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    FONDO CON GRADIENTE ANIMADO
+    ============================================ -->
+    <div class="gradient-bg"></div>
+
+    <!-- ============================================
+    WHATSAPP FLOTANTE
+    ============================================ -->
+    <a href="https://wa.me/message/L73JF2L4ZVJ2I1?text=Hola%2C%20quiero%20empezar%20con%20las%20encuestas%2C%20%C2%BFme%20gu%C3%ADas%3F"
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.032 21.965c-1.917 0-3.78-.5-5.383-1.443l-4.787 1.57 1.557-4.69c-1.02-1.624-1.56-3.48-1.56-5.403 0-5.75 4.688-10.438 10.438-10.438 5.75 0 10.438 4.688 10.438 10.438-.001 5.75-4.688 10.438-10.439 10.438zm0-19.162c-4.82 0-8.744 3.924-8.744 8.744 0 1.876.593 3.683 1.718 5.203l-1.124 3.384 3.536-1.156c1.476.885 3.2 1.358 4.973 1.358 4.82 0 8.744-3.924 8.744-8.744s-3.924-8.744-8.744-8.744zm4.765 11.059c-.263-.132-1.55-.764-1.79-.852-.24-.088-.415-.132-.589.132-.174.264-.674.852-.826 1.026-.152.174-.304.198-.567.066-1.025-.457-1.695-1.502-1.868-1.762-.174-.264-.016-.398.13-.526.132-.114.294-.297.441-.446.147-.15.196-.264.294-.44.099-.176.05-.33-.025-.462-.074-.132-.589-1.42-.807-1.943-.213-.512-.43-.435-.589-.443-.152-.008-.326-.008-.5-.008-.174 0-.458.066-.698.33-.24.264-.916.895-.916 2.183 0 1.288.938 2.533 1.07 2.708.132.176 1.847 2.821 4.476 3.958 2.629 1.137 2.629.759 3.103.711.474-.048 1.53-.626 1.745-1.23.215-.604.215-1.122.151-1.23-.064-.108-.238-.176-.502-.308z"/></svg>
+    </a>
+
+    <!-- ============================================
+    HEADER
+    ============================================ -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Panelistas<span>Latinos</span></a>
+            <ul class="nav-links" role="navigation" aria-label="Menú principal">
+                <li>Inicio</li>
+                <li>Cómo funciona</li>
+                <li>Seguridad</li>
+                <li>FAQ</li>
+                <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">
+  <svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 0h22v2H0zM0 6h22v2H0zM0 12h22v2H0z" fill="#fff"/></svg>
+</button>
+            </ul>
+            <a href="https://wa.me/message/L73JF2L4ZVJ2I1?text=Hola%2C%20quiero%20empezar%20con%20las%20encuestas%2C%20%C2%BFme%20gu%C3%ADas%3F"
+               target="_blank"
+               class="nav-cta">
+                Unirme ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- ============================================
+    HERO
+    ============================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- Columna Izquierda -->
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span>Oficial</span> Reclutamiento de Panelistas Latinos
+                    </div>
+
+                    <h1>
+                        Gana dinero desde tu <span class="highlight">celular</span> con encuestas
+                    </h1>
+
+                    <p>
+                        <strong>Sin pagar nada.</strong> Empresas como Adidas, Temu, Netflix
+                        necesitan conocer al consumidor latino. Tu opinión vale.
+                    </p>
+
+                    <a href="https://wa.me/message/L73JF2L4ZVJ2I1?text=Hola%2C%20quiero%20empezar%20con%20las%20encuestas%2C%20%C2%BFme%20gu%C3%ADas%3F"
+                       target="_blank"
+                       class="hero-cta" role="button">
+                        Quiero empezar ahora
+                    </a>
+                </div>
+
+                <!-- Columna Derecha: Glassmorphism Card con imagen -->
+                <div class="hero-card">
+                    <!-- IMAGEN REAL (reemplaza el src con tu imagen HD si quieres) -->
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80"
+                             alt="Persona usando una tablet para realizar encuestas"
+                             loading="lazy" />
+                    </div>
+
+                    <div class="card-header">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4h-5v2h5v4l5-5-5-5z"/></svg>
+                        </div>
+                        <div>
+                            <h3>Cómo empiezo</h3>
+                            <p>Te guiamos paso a paso</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-list" aria-hidden="false">
+                        <div class="item">
+                            <span class="check">✓</span>
+                            <div><strong>Registro gratuito</strong> en plataformas oficiales</div>
+                        </div>
+                        <div class="item">
+                            <span class="check">✓</span>
+                            <div><strong>Encuestas de 5 a 15 minutos</strong> desde tu celular</div>
+                        </div>
+                        <div class="item">
+                            <span class="check">✓</span>
+                            <div><strong>Retiros desde $5</strong> en PayPal, Amazon o banco</div>
+                        </div>
+                        <div class="item">
+                            <span class="check">✓</span>
+                            <div><strong>Asesoría gratuita personalizada</strong> en español por WhatsApp</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    MARCAS
+    ============================================ -->
+    <section class="brands-section fade-section" aria-label="Marcas que confían">
+        <div class="container">
+            <div class="label">Empresas que confían en panelistas como tú</div>
+            <div class="brands-grid" aria-hidden="false">
+                <span class="brand">Adidas</span>
+                <span class="brand">Coca-Cola</span>
+                <span class="brand">Amazon</span>
+                <span class="brand">Disney+</span>
+                <span class="brand">Netflix</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CÓMO FUNCIONA
+    ============================================ -->
+    <section class="section fade-section" id="como-funciona" aria-labelledby="como-funciona-title">
+        <div class="container">
+            <h2 id="como-funciona-title" class="section-title">Empieza en <span class="gradient-text">3 pasos simples</span></h2>
+            <p class="section-subtitle">Sin complicaciones, sin letra pequeña.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <div class="step-number">1</div>
+                    <h3>Regístrate</h3>
+                    <p>Te enviamos el enlace directo a los paneles oficiales de las plataformas que ofrecemos.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    </div>
+                    <div class="step-number">2</div>
+                    <h3>Responde encuestas</h3>
+                    <p>Contesta entre 5 y 20 minutos sobre productos, anuncios o servicios.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                    </div>
+                    <div class="step-number">3</div>
+                    <h3>Retira tu dinero</h3>
+                    <p>Acumula puntos y cámbialos por PayPal, Amazon o depósito bancario desde los $5.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    SEGURIDAD
+    ============================================ -->
+    <section class="section fade-section" aria-labelledby="seguridad-title">
+        <div class="container">
+            <h2 id="seguridad-title" class="section-title"><span class="gradient-text">100% seguro</span> y real</h2>
+            <p class="section-subtitle">Las empresas pagan por conocer tu opinión. Nosotros solo te guiamos.</p>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <h3>Empresas necesitan datos</h3>
+                    <p>Adidas, Temu, Netflix, Amazon pagan miles por conocer al consumidor latino.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5L12 1zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    </div>
+                    <h3>Contacto directo</h3>
+                    <p>El pago te lo envía <strong>directamente la plataforma</strong>. Nosotros nunca tocamos tu dinero.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                    </div>
+                    <h3>Cero inversión</h3>
+                    <p>No te pedimos tarjeta o depósitos para que apliques, realices las actividades o retires tu dinero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ----- Inserta este HTML donde quieras mostrar las tarjetas ----- -->
+<section class="section fade-section" id="pruebas" aria-labelledby="pruebas-title" style="padding-top: 40px;"></section>
+  <div class="container">
+    <div class="proof-header">
+      <h2 id="pruebas-title" class="section-title" style="text-align: left; font-size: clamp(26px, 5vw, 38px); margin-bottom: 4px;">
+        Pruebas reales de <span class="gradient-text">pagos</span>
+      </h2>
+      <p class="section-subtitle" style="text-align: left; max-width: 520px;">
+        Panelistas latinos como tú ya están cobrando. Esto no es teoría, es realidad.
+      </p>
+    </div>
+
+    <div class="proof-grid" aria-live="polite">
+      <!-- Tarjeta 1 -->
+      <article class="proof-card">
+        <div class="proof-image-wrapper">
+          <div class="proof-image">
+            <img src="https://i.ibb.co/mYVVm8L/Whats-App-Image-2026-08-05-at-2-31-28-PM.jpg"
+                 alt="Pago - ejemplo 1"
+                 loading="lazy" width="800" height="1067">
+            <span class="proof-badge">✓ Verificado</span>
+          </div>
+        </div>
+        <div class="proof-content">
+          <div class="proof-top-row">
+            <span class="proof-amount">73,10 dolares</span>
+            <span class="proof-platform">Paypal</span>
+          </div>
+          <div class="proof-date">28 mayo 2026</div>
+          <p class="proof-testimonial">"Inicie hace un dia y medio y hace una hora pude retirar. Excelente!"</p>
+          <div class="proof-author">— Mario C., Texas</div>
+        </div>
+      </article>
+
+      <!-- Tarjeta 2 -->
+      <article class="proof-card">
+        <div class="proof-image-wrapper">
+          <div class="proof-image">
+            <img src="https://i.ibb.co/KzDzvgGt/Whats-App-Image-2026-08-04-at-9-50-00-PM-2-2.jpg"
+                 alt="Pago - ejemplo 2"
+                 loading="lazy" width="800" height="1067">
+            <span class="proof-badge">✓ Verificado</span>
+          </div>
+        </div>
+        <div class="proof-content">
+          <div class="proof-top-row">
+            <span class="proof-amount">60.06 </span>
+            <span class="proof-platform">Paypal</span>
+          </div>
+          <div class="proof-date">3 agosto 2026</div>
+          <p class="proof-testimonial">"Llevo 60$ en dos días. Vale la pena."</p>
+          <div class="proof-author">— Carlos R., Miami</div>
+        </div>
+      </article>
+
+      <!-- Tarjeta 3 -->
+      <article class="proof-card">
+        <div class="proof-image-wrapper">
+          <div class="proof-image">
+            <img src="https://i.ibb.co/xW7wbML/Whats-App-Image-2026-08-04-at-9-50-00-PM-3.jpg"
+                 alt="Pago - ejemplo 3"
+                 loading="lazy" width="800" height="1067">
+            <span class="proof-badge">✓ Verificado</span>
+          </div>
+        </div>
+        <div class="proof-content">
+          <div class="proof-top-row">
+            <span class="proof-amount">100$ dolares</span>
+            <span class="proof-platform">Pago</span>
+          </div>
+          <div class="proof-date">10 agosto 2026</div>
+          <p class="proof-testimonial">"Pensé que era estafa, ya llevo 3 pagos. ¡Gracias!"</p>
+          <div class="proof-author">— Ana S., Texas</div>
+        </div>
+      </article>
+
+      <!-- Tarjeta 4 -->
+      <article class="proof-card">
+        <div class="proof-image-wrapper">
+          <div class="proof-image">
+            <img src="https://i.ibb.co/tPJFft6d/Whats-App-Image-2026-08-04-at-9-50-00-PM-4.jpg"
+                 alt="Pago - ejemplo 4"
+                 loading="lazy" width="800" height="1067">
+            <span class="proof-badge">✓ Verificado</span>
+          </div>
+        </div>
+        <div class="proof-content">
+          <div class="proof-top-row">
+            <span class="proof-amount">45.00$ dolares</span>
+            <span class="proof-platform">PayPal</span>
+          </div>
+          <div class="proof-date">28 julio 2026</div>
+          <p class="proof-testimonial">"Anoche me aceptaron y hoy retire. Esto sí funciona."</p>
+          <div class="proof-author">— José M., Chicago</div>
+        </div>
+      </article>
+
+      <!-- Tarjeta 5 -->
+      <article class="proof-card">
+        <div class="proof-image-wrapper">
+          <div class="proof-image">
+            <img src="https://i.ibb.co/YFZcQ8d3/Whats-App-Image-2026-08-04-at-9-50-00-PM-5.jpg"
+                 alt="Pago - ejemplo 5"
+                 loading="lazy" width="800" height="1067">
+            <span class="proof-badge">✓ Verificado</span>
+          </div>
+        </div>
+        <div class="proof-content">
+          <div class="proof-top-row">
+            <span class="proof-amount">35.00$ dolares</span>
+            <span class="proof-platform">Banco</span>
+          </div>
+          <div class="proof-date">5 agosto 2026</div>
+          <p class="proof-testimonial">"Muy fácil y rápido. El dinero llega sin problemas."</p>
+          <div class="proof-author">— Laura V., Nueva York</div>
+        </div>
+      </article>
+
+      <!-- Tarjeta 6 -->
+      <article class="proof-card">
+        <div class="proof-image-wrapper">
+          <div class="proof-image">
+            <img src="https://i.ibb.co/spYXKTqR/Whats-App-Image-2026-08-05-at-2-45-21-PM.jpg"
+                 alt="Pago - ejemplo 6"
+                 loading="lazy" width="800" height="1067">
+            <span class="proof-badge">✓ Verificado</span>
+          </div>
+        </div>
+        <div class="proof-content">
+          <div class="proof-top-row">
+            <span class="proof-amount">50.00$ dolares</span>
+            <span class="proof-platform">Paypal</span>
+          </div>
+          <div class="proof-date">1 agosto 2026</div>
+          <p class="proof-testimonial">"El mejor ingreso extra que he encontrado. 100% recomendado."</p>
+          <div class="proof-author">— Miguel P., Florida</div>
+        </div>
+      </article>
+    </div>
+
+    <!-- (Aquí queda el proof-footer que ya tenías) -->
+  </div>
+</section>
+            <!-- Categorías -->
+            <div class="proof-footer">
+                <div class="category-block opt-glass">
+  <div class="category-icon" aria-hidden="true">
+    <!-- Phone -->
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="2.5" width="17" height="19" rx="3.5" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="12" cy="18.2" r="0.7" fill="currentColor"/></svg>
+  </div>
+  <div class="category-info">
+    <h4>Desde tu celular</h4>
+    <p>Responde desde donde estés</p>
+  </div>
+</div>
+
+<div class="category-block opt-glass">
+  <div class="category-icon" aria-hidden="true">
+    <!-- Clock -->
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M12 7.5v5l3 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="category-info">
+    <h4>Pagos rápidos</h4>
+    <p>Tu dinero en menos de 48h</p>
+  </div>
+</div>
+
+<div class="category-block opt-glass">
+  <div class="category-icon" aria-hidden="true">
+    <!-- Shield -->
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/><path d="M9.2 12.2l1.8 1.8 3.8-3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  </div>
+  <div class="category-info">
+    <h4>Plataformas seguras</h4>
+    <p>Empresas globales verificadas</p>
+  </div>
+</div>
+
+<div class="category-block opt-glass">
+  <div class="category-icon" aria-hidden="true">
+    <!-- Chat support -->
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="12" rx="2.5" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M7 9h10M7 12h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="category-info">
+    <h4>Soporte en español</h4>
+    <p>Te ayudamos paso a paso</p>
+  </div>
+</div>
+               </div>
+            </div>
+         </div>
+    </div>
+ </section>
+
+    <!-- ============================================
+    FAQ
+    ============================================ -->
+    <section class="section fade-section" aria-labelledby="faq-title">
+        <div class="container">
+            <h2 id="faq-title" class="section-title"><span class="gradient-text">Preguntas frecuentes</span></h2>
+
+            <div class="faq-list" role="list">
+                <div class="faq-item active" role="listitem">
+                    <div class="faq-question">¿Tengo que pagar algo? <span class="arrow">▼</span></div>
+                    <div class="faq-answer"><strong>No.</strong> Las empresas te pagan a ti por tu tiempo y opinión.</div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <div class="faq-question">¿Necesito experiencia o inglés? <span class="arrow">▼</span></div>
+                    <div class="faq-answer"><strong>No.</strong> Solo saber usar el celular. Las encuestas vienen en su mayoría en español y te guiamos paso a paso.</div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <div class="faq-question">¿Cómo me van a ayudar? <span class="arrow">▼</span></div>
+                    <div class="faq-answer">Te enviamos <strong>notas de voz y mensajes</strong> explicándote cómo llenar tu perfil y vincular tu cuenta para cobrar sin problemas.</div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <div class="faq-question">¿Puedo hacerlo desde mi teléfono? <span class="arrow">▼</span></div>
+                    <div class="faq-answer"><strong>100% desde tu celular.</strong> Puedes hacerlo mientras ves TV, esperas el bus o en tus tiempos libres.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA FINAL
+    ============================================ -->
+    <section class="section-cta fade-section">
+        <div class="container">
+            <div class="social-proof">
+                <span aria-hidden="true">👥</span> <span class="count">+150</span> latinos se han inscrito esta semana
+            </div>
+            <h2>¿Listo para empezar? <br />Tu primer ingreso está a un clic.</h2>
+            <p>Habla con una asesora que te guiará en español paso a paso.</p>
+
+            <a href="https://wa.me/message/L73JF2L4ZVJ2I1?text=Hola%2C%20quiero%20empezar%20con%20las%20encuestas%2C%20%C2%BFme%20gu%C3%ADas%3F"
+               target="_blank"
+               class="btn-whatsapp" role="button">
+                Hablar con una asesora
+            </a>
+
+            <div class="cta-security-text" role="status" aria-live="polite">
+                <span class="dot"></span> Activo ahora. Te responderé por <strong>mensaje de voz</strong> en menos de 1 minuto.
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script>
+        // FADE-IN AL HACER SCROLL
+        const fadeElements = document.querySelectorAll('.fade-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach((el) => observer.observe(el));
+
+        // FAQ ACORDEÓN
+        document.querySelectorAll('.faq-item').forEach((item) => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach((el) => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // HEADER SCROLL
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                header.style.background = 'rgba(10, 10, 20, 0.85)';
+            } else {
+                header.style.background = 'rgba(10, 10, 20, 0.6)';
+            }
+        });
+        // NAV HAMBURGER: abrir / cerrar menú en móvil
+(function() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (!navToggle || !navLinks) return;
+
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    navLinks.classList.toggle('show');
+  });
+
+  // Cerrar cuando se hace click en un link del menú (útil en móviles)
+  navLinks.querySelectorAll('li').forEach((li) => {
+    li.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Si el usuario redimensiona a escritorio, aseguramos que el panel se cierre
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Cerrar si el usuario clickea fuera del panel (toque/fuera)
+  document.addEventListener('click', (e) => {
+    if (!navLinks.classList.contains('show')) return;
+    const target = e.target;
+    if (!navLinks.contains(target) && target !== navToggle && !navToggle.contains(target)) {
+      navLinks.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+    </script>
+
+</body>
+</html> 
