@@ -1793,6 +1793,48 @@ html, body { overflow-x: hidden; }
   });
 })();
     </script>
+<script>
+(async function(){
+  try {
+    const res = await fetch('/.netlify/functions/check-geo', {cache: 'no-store'});
+    const data = await res.json();
+    if (!data.allowed) {
+      document.documentElement.style.overflow = 'hidden';
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.inset = '0';
+      overlay.style.background = 'linear-gradient(180deg, rgba(10,10,20,0.95), rgba(10,10,20,0.98))';
+      overlay.style.zIndex = '999999';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.color = '#fff';
+      overlay.innerHTML = `
+        <div style="max-width:520px;padding:28px;text-align:center;">
+          <h2 style="margin-bottom:12px">Acceso restringido</h2>
+          <p style="margin-bottom:18px">Este servicio solo está disponible para residentes en EE. UU.</p>
+          <p style="font-size:13px;color:#ddd;margin-bottom:10px">Razón: ${data.reason || 'desconocida'}</p>
+          <p style="font-size:13px;color:#ddd">Si sos la dueña, haz clic <a id="owner-link" href="#">aquí</a> para ingresar (necesitarás tu token).</p>
+        </div>
+      `;
+      document.body.appendChild(overlay);
 
+      document.getElementById('owner-link').addEventListener('click', function(e){
+        e.preventDefault();
+        const token = prompt('Introduce el token de dueña (SECRET):');
+        if (token) {
+          window.location.href = '/.netlify/functions/set-owner?token=' + encodeURIComponent(token);
+        }
+      });
+    }
+  } catch (e) {
+    console.error('geo check failed', e);
+    const overlay = document.createElement('div');
+    overlay.style.position='fixed'; overlay.style.inset='0'; overlay.style.background='rgba(0,0,0,0.85)'; overlay.style.zIndex='999999'; overlay.style.color='#fff'; overlay.style.display='flex'; overlay.style.alignItems='center'; overlay.style.justifyContent='center';
+    overlay.innerHTML = '<div style="max-width:520px;padding:20px;text-align:center;"><h2>Error de verificación</h2><p>No pudimos verificar tu ubicación. Intenta de nuevo o contacta soporte.</p></div>';
+    document.body.appendChild(overlay);
+  }
+})();
+</script>                                                               
 </body>
 </html> 
